@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
     
     var i = 0
     
@@ -32,6 +32,21 @@ class ViewController: UIViewController {
             titleLabel.text = "Done"
             
             i = 0
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if titleLabel.applyGradientWith(startColor: .gray, endColor: .green) {
+            
+            print("Gradient applied!")
+            
+        } else {
+        
+            print("Could not apply gradient")
+            
+            titleLabel.textColor = .black
         }
     }
 }
