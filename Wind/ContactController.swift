@@ -10,6 +10,12 @@ import MapKit
 
 class ContactController: UIViewController {
     
+    @IBOutlet weak var standardButton: UIButton!
+    
+    @IBOutlet weak var SatelliteButton: UIButton!
+    
+    @IBOutlet weak var hybridButton: UIButton!
+    
     @IBOutlet weak var clientMap: MKMapView!
     
     @IBOutlet weak var clockLabel: UILabel!
@@ -31,6 +37,36 @@ class ContactController: UIViewController {
             print("Could not apply gradient")
             
             clockLabel.textColor = .black
+        }
+    }
+    
+    @IBAction func mapTypePressed(_ sender: UIButton) {
+        
+        standardButton.backgroundColor = UIColor.white
+                
+        SatelliteButton.backgroundColor = UIColor.white
+        
+        hybridButton.backgroundColor = UIColor.white
+        
+        sender.backgroundColor = UIColor.gray
+        
+        switch sender.tag {
+            
+            case 0:
+                
+                clientMap.preferredConfiguration = MKStandardMapConfiguration()
+                
+            case 1:
+                
+                clientMap.preferredConfiguration = MKImageryMapConfiguration()
+                
+            case 2:
+                
+                clientMap.preferredConfiguration = MKHybridMapConfiguration()
+                
+            default:
+                
+                break
         }
     }
 }
