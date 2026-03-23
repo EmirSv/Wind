@@ -153,8 +153,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-jW-gKx">
-                                <rect key="frame" x="115" y="593" width="172" height="56"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
+                                <rect key="frame" x="115" y="593" width="172" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -165,7 +165,7 @@
                             <constraint firstItem="sxd-Nb-FAS" firstAttribute="top" secondItem="u2u-Re-ACg" secondAttribute="bottom" constant="32.333333333333343" id="6Zf-2r-Yrp"/>
                             <constraint firstItem="9we-6D-6Xw" firstAttribute="bottom" secondItem="sxd-Nb-FAS" secondAttribute="bottom" constant="253" id="Aom-wo-ex2"/>
                             <constraint firstItem="u2u-Re-ACg" firstAttribute="leading" secondItem="9we-6D-6Xw" secondAttribute="leading" id="KfK-df-0we"/>
-                            <constraint firstItem="9we-6D-6Xw" firstAttribute="bottom" secondItem="jOG-jW-gKx" secondAttribute="bottom" constant="163" id="Lwd-dN-tid"/>
+                            <constraint firstItem="9we-6D-6Xw" firstAttribute="bottom" secondItem="jOG-jW-gKx" secondAttribute="bottom" constant="193" id="Lwd-dN-tid"/>
                             <constraint firstItem="u2u-Re-ACg" firstAttribute="centerX" secondItem="T7y-vh-5Hl" secondAttribute="centerX" id="OpX-rO-RXg"/>
                             <constraint firstItem="jOG-jW-gKx" firstAttribute="leading" secondItem="9we-6D-6Xw" secondAttribute="leading" constant="115" id="Vp1-FB-Fai"/>
                             <constraint firstItem="sxd-Nb-FAS" firstAttribute="leading" secondItem="9we-6D-6Xw" secondAttribute="leading" constant="21" id="fPz-HW-DDE"/>
