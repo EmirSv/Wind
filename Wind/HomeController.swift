@@ -11,14 +11,21 @@ class HomeController: UIViewController {
     
     var i = 0
     
+    var j = 0
+    
     @IBOutlet weak var bg: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func mePressed(_ sender: UIButton) {
         
-        titleLabel.textColor = UIColor.white
+        j += 1
         
+        if (j == 1) {
+            
+            titleLabel.textColor = UIColor.white
+        }
+            
         if(i == 0) {
             
             bg.image = UIImage(named: "1")
