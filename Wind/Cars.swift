@@ -41,6 +41,8 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // set the text from the data model
             cell.photo?.image = UIImage(named: self.cars[indexPath.row])
             
+            cell.photo.layer.cornerRadius = 15
+            
             return cell
         }
         
