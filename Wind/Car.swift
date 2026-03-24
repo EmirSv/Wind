@@ -9,5 +9,6 @@ import UIKit
 
 class Car: UITableViewCell {
     
+    @IBOutlet weak var photo: UIImageView!
     
 }

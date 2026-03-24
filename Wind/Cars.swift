@@ -39,10 +39,10 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
             // create a new cell if needed or reuse an old one
-            let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
+            let cell:Car = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)! as! Car
             
             // set the text from the data model
-            cell.textLabel?.text = self.cars[indexPath.row]
+            cell.photo?.image = UIImage(named: self.cars[indexPath.row])
             
             return cell
         }
