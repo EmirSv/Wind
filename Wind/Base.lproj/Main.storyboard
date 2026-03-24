@@ -239,10 +239,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpJ-xR-x2b">
-                                <rect key="frame" x="0.0" y="27.000000000000004" width="402" height="59.333333333333343"/>
+                                <rect key="frame" x="0.0" y="51" width="402" height="59.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1F-H3-53v">
-                                        <rect key="frame" x="180.33333333333337" y="22" width="40.666666666666629" height="24"/>
+                                        <rect key="frame" x="180.33333333333334" y="22" width="40.666666666666657" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -253,6 +253,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="&lt;"/>
                                         <connections>
                                             <action selector="backPressed:" destination="oy5-LM-m0j" eventType="touchUpInside" id="Fid-17-euO"/>
+                                            <action selector="backPressed:" destination="QrE-C0-7bT" eventType="touchUpInside" id="w7u-9W-gsh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -278,7 +279,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="402" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZe-SU-crg">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZe-SU-crg">
                                                     <rect key="frame" x="20" y="0.0" width="362" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -300,7 +301,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RpJ-xR-x2b" secondAttribute="trailing" id="hbm-Tr-uPY"/>
                             <constraint firstItem="RpJ-xR-x2b" firstAttribute="leading" secondItem="wMw-Qv-8Qg" secondAttribute="leading" id="vXE-E3-nmy"/>
-                            <constraint firstItem="RpJ-xR-x2b" firstAttribute="top" secondItem="CsG-1x-MTV" secondAttribute="top" constant="-35" id="w2t-GQ-lpJ"/>
+                            <constraint firstItem="RpJ-xR-x2b" firstAttribute="top" secondItem="CsG-1x-MTV" secondAttribute="top" constant="-11" id="w2t-GQ-lpJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bsA-XT-qD2"/>
@@ -315,13 +316,13 @@
     </scenes>
     <resources>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -10,7 +10,7 @@ import UIKit
 class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Data model: These strings will be the data for the table view cells
-        let cars: [String] = ["car-1", "car-2", "car-3"]
+        let cars: [String] = ["car-1", "car-2", "car-3", "car-4", "car-5"]
         
         // cell reuse id (cells that scroll out of view can be reused)
         let cellReuseIdentifier = "cell"
@@ -18,18 +18,15 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // don't forget to hook this up from the storyboard
         @IBOutlet var tableView: UITableView!
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
+        @IBAction func backPressed(_ sender: UIButton) {
             
-            // Register the table view cell class and its reuse id
-            self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-            
-            // (optional) include this line if you want to remove the extra empty cell divider lines
-            // self.tableView.tableFooterView = UIView()
-
-            // This view controller itself will provide the delegate methods and row data for the table view.
+            self.dismiss(animated: false)
         }
-        
+    
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 230
+        }
+    
         // number of rows in table view
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return self.cars.count
