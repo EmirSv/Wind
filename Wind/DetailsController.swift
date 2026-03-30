@@ -15,4 +15,9 @@ class DetailsController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    @IBAction func backPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: false)
+    }
 }
