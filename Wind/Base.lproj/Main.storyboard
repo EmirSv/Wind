@@ -6,6 +6,7 @@
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -453,13 +454,54 @@
                                     <constraint firstItem="TJk-ow-ofm" firstAttribute="leading" secondItem="uYQ-LF-300" secondAttribute="leading" constant="167.33333333333326" id="j5w-Wx-U1h"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-mJ-NHn">
-                                <rect key="frame" x="0.0" y="114" width="402" height="391"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-mJ-NHn">
+                                <rect key="frame" x="0.0" y="114" width="402" height="335"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4B-WR-FCQ">
                                         <rect key="frame" x="8" y="8" width="386" height="241"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8oJ-31-WhG">
+                                        <rect key="frame" x="8" y="257" width="386" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jhz-1m-TU6">
+                                            <size key="itemSize" width="63" height="63"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="3" maxX="2" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="8jK-rc-jLa" customClass="PhotosCollection" customModule="Wind" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="3" width="63" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kFA-9E-YG7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fyP-ia-VqK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="62" id="Xbe-VR-VSn"/>
+                                                                <constraint firstAttribute="height" constant="62" id="hHC-gz-f3W"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="fyP-ia-VqK" firstAttribute="top" secondItem="kFA-9E-YG7" secondAttribute="top" id="471-m9-4Kw"/>
+                                                        <constraint firstItem="fyP-ia-VqK" firstAttribute="leading" secondItem="kFA-9E-YG7" secondAttribute="leading" id="pG2-3t-GoE"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="photo" destination="fyP-ia-VqK" id="jGR-W3-MiQ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="tGG-nK-Ton" id="r7f-M0-5WJ"/>
+                                            <outlet property="delegate" destination="tGG-nK-Ton" id="aC8-oi-WC9"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -472,7 +514,7 @@
                             <constraint firstItem="2wh-Yf-7b0" firstAttribute="trailing" secondItem="uYQ-LF-300" secondAttribute="trailing" id="B8s-Ul-8Rm"/>
                             <constraint firstItem="2wh-Yf-7b0" firstAttribute="top" secondItem="uYQ-LF-300" secondAttribute="top" constant="2" id="CWp-w9-SRu"/>
                             <constraint firstItem="2wh-Yf-7b0" firstAttribute="trailing" secondItem="OAK-mJ-NHn" secondAttribute="trailing" id="gmi-BA-VXI"/>
-                            <constraint firstItem="OAK-mJ-NHn" firstAttribute="height" secondItem="Jgk-Jy-2vC" secondAttribute="height" multiplier="0.453865" id="iaB-Ql-Ipw"/>
+                            <constraint firstItem="OAK-mJ-NHn" firstAttribute="height" secondItem="Jgk-Jy-2vC" secondAttribute="height" multiplier="0.453865" constant="-28.99973" id="iaB-Ql-Ipw"/>
                             <constraint firstItem="uYQ-LF-300" firstAttribute="leading" secondItem="2wh-Yf-7b0" secondAttribute="leading" id="ko2-a3-nmR"/>
                             <constraint firstItem="OAK-mJ-NHn" firstAttribute="top" secondItem="2wh-Yf-7b0" secondAttribute="top" constant="52" id="pDc-xI-EXr"/>
                         </constraints>
@@ -480,6 +522,7 @@
                     <navigationItem key="navigationItem" id="rw2-o8-5Eq"/>
                     <connections>
                         <outlet property="photo" destination="n4B-WR-FCQ" id="Jk6-ku-ujG"/>
+                        <outlet property="photosCollection" destination="8oJ-31-WhG" id="Tv7-l1-kjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdS-CJ-4l2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -489,13 +532,13 @@
     </scenes>
     <resources>
         <systemColor name="separatorColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
