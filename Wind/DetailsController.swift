@@ -23,7 +23,7 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
 
-    var items = ["photo-1", "photo-2", "photo-3", "photo-1", "photo-2", "photo-3"]
+    var items = ["small-photo-1", "small-photo-2", "small-photo-3", "small-photo-1", "small-photo-2", "small-photo-3"]
     
     
     // MARK: - UICollectionViewDataSource protocol
