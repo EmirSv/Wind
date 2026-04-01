@@ -13,12 +13,40 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var photosCollection: UICollectionView!
     
+    @IBOutlet weak var makeTitle: UILabel!
+    
+    @IBOutlet weak var modelTitle: UILabel!
+    
+    @IBOutlet weak var yearTitle: UILabel!
+    
+    @IBOutlet weak var mileageTitle: UILabel!
+    
+    @IBOutlet weak var colorTitle: UILabel!
+    
+    @IBOutlet weak var transmissionTitle: UILabel!
+    
+    @IBOutlet weak var newTitle: UILabel!
+    
     var info = ["": ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         photo.image = UIImage(named: "photo-1")
+        
+        makeTitle.text = "Ferrari"
+        
+        modelTitle.text = "Purousange"
+        
+        yearTitle.text = "2026"
+        
+        mileageTitle.text = "10"
+        
+        colorTitle.text = "Red"
+        
+        transmissionTitle.text = "Automatic"
+        
+        newTitle.text = "Yes"
     }
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
