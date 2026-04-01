@@ -27,6 +27,8 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var newTitle: UILabel!
     
+    @IBOutlet weak var viewsButton: UIButton!
+    
     var info = ["": ""]
     
     override func viewDidLoad() {
@@ -47,6 +49,38 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         transmissionTitle.text = "Automatic"
         
         newTitle.text = "Yes"
+        
+        //viewsButton.titleLabel?.text = "Views:\n22"
+        
+        viewsButton?.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+            let buttonText: NSString = "Views\n\n22"
+
+            //getting the range to separate the button title strings
+            let newlineRange: NSRange = buttonText.range(of: "\n")
+
+            //getting both substrings
+            var substring1 = ""
+            var substring2 = ""
+
+            if(newlineRange.location != NSNotFound) {
+                substring1 = buttonText.substring(to: newlineRange.location)
+                substring2 = buttonText.substring(from: newlineRange.location)
+            }
+
+            //assigning diffrent fonts to both substrings
+            let font1: UIFont = UIFont(name: "Arial", size: 16.0)!
+            let attributes1 = [NSMutableAttributedString.Key.font: font1]
+            let attrString1 = NSMutableAttributedString(string: substring1, attributes: attributes1)
+
+            let font2: UIFont = UIFont(name: "Arial", size: 16.0)!
+            let attributes2 = [NSMutableAttributedString.Key.font: font2]
+            let attrString2 = NSMutableAttributedString(string: substring2, attributes: attributes2)
+
+            //appending both attributed strings
+            attrString1.append(attrString2)
+
+            //assigning the resultant attributed strings to the button
+            viewsButton?.setAttributedTitle(attrString1, for: [])
     }
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
