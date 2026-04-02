@@ -136,6 +136,16 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         print("You selected cell #\(itm)!")
         
         photo.image = UIImage(named: "photo-\(itm + 1)")
+        
+        let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.blue.cgColor
+            cell?.isSelected = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.lightGray.cgColor
+        cell?.isSelected = false
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
