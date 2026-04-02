@@ -34,6 +34,10 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        photo.layer.borderColor = UIColor.lightGray.cgColor
+        
+        photo.layer.borderWidth = 1
+        
         photo.image = UIImage(named: "photo-1")
         
         makeTitle.text = "Ferrari"
@@ -55,37 +59,37 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         viewsButton?.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
             let buttonText: NSString = "Views\n\n22"
 
-            //getting the range to separate the button title strings
-            let newlineRange: NSRange = buttonText.range(of: "\n")
+        //getting the range to separate the button title strings
+        let newlineRange: NSRange = buttonText.range(of: "\n")
 
-            //getting both substrings
-            var substring1 = ""
-            var substring2 = ""
+        //getting both substrings
+        var substring1 = ""
+        var substring2 = ""
 
-            if(newlineRange.location != NSNotFound) {
-                substring1 = buttonText.substring(to: newlineRange.location)
-                substring2 = buttonText.substring(from: newlineRange.location)
-            }
+        if(newlineRange.location != NSNotFound) {
+            substring1 = buttonText.substring(to: newlineRange.location)
+            substring2 = buttonText.substring(from: newlineRange.location)
+        }
 
-            //assigning diffrent fonts to both substrings
-            let font1: UIFont = UIFont(name: "Arial", size: 16.0)!
-            let attributes1 = [NSMutableAttributedString.Key.font: font1]
-            let attrString1 = NSMutableAttributedString(string: substring1, attributes: attributes1)
+        //assigning diffrent fonts to both substrings
+        let font1: UIFont = UIFont(name: "Arial", size: 16.0)!
+        let attributes1 = [NSMutableAttributedString.Key.font: font1]
+        let attrString1 = NSMutableAttributedString(string: substring1, attributes: attributes1)
 
-            let font2: UIFont = UIFont(name: "Arial", size: 16.0)!
-            let attributes2 = [NSMutableAttributedString.Key.font: font2]
-            let attrString2 = NSMutableAttributedString(string: substring2, attributes: attributes2)
+        let font2: UIFont = UIFont(name: "Arial", size: 16.0)!
+        let attributes2 = [NSMutableAttributedString.Key.font: font2]
+        let attrString2 = NSMutableAttributedString(string: substring2, attributes: attributes2)
 
-            //appending both attributed strings
-            attrString1.append(attrString2)
+        //appending both attributed strings
+        attrString1.append(attrString2)
 
-            //assigning the resultant attributed strings to the button
-            viewsButton?.setAttributedTitle(attrString1, for: [])
+        //assigning the resultant attributed strings to the button
+        viewsButton?.setAttributedTitle(attrString1, for: [])
     }
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
 
-    var items = ["small-photo-1", "small-photo-2", "small-photo-3", "small-photo-4", "small-photo-5", "small-photo-6"]
+    var items = ["small-photo-1", "small-photo-2", "small-photo-3"]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -105,6 +109,17 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PhotosCollection
+        
+        // Source - https://stackoverflow.com/a/52838284
+        // Posted by Sathish Kumar Gurunathan
+        // Retrieved 2026-04-03, License - CC BY-SA 4.0
+
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: flowLayout.itemSize.width, height: flowLayout.itemSize.height)
+        }
+        
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 1
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.photo.image = UIImage(named: self.items[indexPath.row]) // The row value is the same as the index of the desired text within the array.
