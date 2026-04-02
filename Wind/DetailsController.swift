@@ -85,7 +85,7 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
 
-    var items = ["small-photo-1", "small-photo-2", "small-photo-3", "small-photo-1", "small-photo-2", "small-photo-3"]
+    var items = ["small-photo-1", "small-photo-2", "small-photo-3", "small-photo-4", "small-photo-5", "small-photo-6"]
     
     
     // MARK: - UICollectionViewDataSource protocol
@@ -114,8 +114,13 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let itm = indexPath.item
+        
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+        print("You selected cell #\(itm)!")
+        
+        photo.image = UIImage(named: "photo-\(itm + 1)")
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
