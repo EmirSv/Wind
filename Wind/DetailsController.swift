@@ -50,7 +50,7 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         
         newTitle.text = "Yes"
         
-        //viewsButton.titleLabel?.text = "Views:\n22"
+        viewsButton.titleLabel?.textAlignment = .center
         
         viewsButton?.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
             let buttonText: NSString = "Views\n\n22"
