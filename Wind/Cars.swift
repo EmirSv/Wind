@@ -15,6 +15,16 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "cell"
     
+    let carsInfo = [
+        ["Make": "BMW", "Model": "X7", "Year": "2026", "Mileage": "10", "Color": "Red", "Transmission": "Manual", "New": "Yes"],
+        ["Make": "Ferrari", "Model": "Purousage", "Year": "2026", "Mileage": "25", "Color": "White", "Transmission": "Automatic", "New": "Yes"],
+        ["Make": "Chevrolet", "Model": "Trailblazer", "Year": "2025", "Mileage": "1200", "Color": "Blue", "Transmission": "Manual", "New": "No"],
+        ["Make": "Mercedes", "Model": "IQ7", "Year": "2026", "Mileage": "10", "Color": "Red", "Transmission": "Automatic", "New": "Yes"],
+        ["Make": "Toyota", "Model": "Yaris", "Year": "2024", "Mileage": "3400", "Color": "Black", "Transmission": "Automatic", "New": "No"]
+    ]
+    
+    var row: Int = 0
+    
     // don't forget to hook this up from the storyboard
     @IBOutlet var tableView: UITableView!
     
@@ -49,6 +59,8 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+        
+        row = indexPath.row
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,7 +71,7 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let destinationVC = segue.destination as? DetailsController {
                 
                 // 3. Pass the data
-                destinationVC.info = ["Make": "BMW", "Model": "X7", "Year": "2026", "Mileage": "10", "Color": "Red", "Transmission": "Automatic", "New": "Yes"]
+                destinationVC.info = carsInfo[row]
             }
         }
     }
