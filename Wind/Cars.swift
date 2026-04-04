@@ -18,9 +18,9 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let photos = [
         ["photo-1", "photo-2", "photo-3"],
         ["photo-4", "photo-5", "photo-6"],
-        ["photo-1", "photo-2", "photo-3"],
-        ["photo-4", "photo-5", "photo-6"],
-        ["photo-1", "photo-2", "photo-3"]
+        ["photo-7", "photo-8", "photo-9"],
+        ["photo-10", "photo-11"],
+        ["photo-12", "photo-13", "photo-14"]
     ]
     
     let carsInfo = [
@@ -34,9 +34,9 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let items = [
         ["small-photo-1", "small-photo-2", "small-photo-3"],
         ["small-photo-4", "small-photo-5", "small-photo-6"],
-        ["small-photo-1", "small-photo-2", "small-photo-3"],
-        ["small-photo-4", "small-photo-5", "small-photo-6"],
-        ["small-photo-1", "small-photo-2", "small-photo-3"]
+        ["small-photo-7", "small-photo-8", "small-photo-9"],
+        ["small-photo-10", "small-photo-11"],
+        ["small-photo-12", "small-photo-13", "small-photo-14"]
     ]
     
     var row: Int = 0
