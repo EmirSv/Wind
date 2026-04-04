@@ -29,10 +29,12 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var viewsButton: UIButton!
     
-    var info = ["": ""]
+    var info: [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(info)
         
         photo.layer.borderColor = UIColor.lightGray.cgColor
         
@@ -40,19 +42,19 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         
         photo.image = UIImage(named: "photo-1")
         
-        makeTitle.text = "Ferrari"
+        makeTitle.text = info["Make"]
         
-        modelTitle.text = "Purousange"
+        modelTitle.text = info["Model"]
         
-        yearTitle.text = "2026"
+        yearTitle.text = info["Year"]
         
-        mileageTitle.text = "10"
+        mileageTitle.text = info["Mileage"]
         
-        colorTitle.text = "Red"
+        colorTitle.text = info["Color"]
         
-        transmissionTitle.text = "Automatic"
+        transmissionTitle.text = info["Transmission"]
         
-        newTitle.text = "Yes"
+        newTitle.text = info["New"]
         
         viewsButton.titleLabel?.textAlignment = .center
         
