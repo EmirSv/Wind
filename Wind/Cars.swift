@@ -15,12 +15,28 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "cell"
     
+    let photos = [
+        ["photo-1", "photo-2", "photo-3"],
+        ["photo-4", "photo-5", "photo-6"],
+        ["photo-1", "photo-2", "photo-3"],
+        ["photo-4", "photo-5", "photo-6"],
+        ["photo-1", "photo-2", "photo-3"]
+    ]
+    
     let carsInfo = [
         ["Make": "BMW", "Model": "X7", "Year": "2026", "Mileage": "10", "Color": "Red", "Transmission": "Manual", "New": "Yes"],
         ["Make": "Ferrari", "Model": "Purousage", "Year": "2026", "Mileage": "25", "Color": "White", "Transmission": "Automatic", "New": "Yes"],
         ["Make": "Chevrolet", "Model": "Trailblazer", "Year": "2025", "Mileage": "1200", "Color": "Blue", "Transmission": "Manual", "New": "No"],
         ["Make": "Mercedes", "Model": "IQ7", "Year": "2026", "Mileage": "10", "Color": "Red", "Transmission": "Automatic", "New": "Yes"],
         ["Make": "Toyota", "Model": "Yaris", "Year": "2024", "Mileage": "3400", "Color": "Black", "Transmission": "Automatic", "New": "No"]
+    ]
+    
+    let items = [
+        ["small-photo-1", "small-photo-2", "small-photo-3"],
+        ["small-photo-4", "small-photo-5", "small-photo-6"],
+        ["small-photo-1", "small-photo-2", "small-photo-3"],
+        ["small-photo-4", "small-photo-5", "small-photo-6"],
+        ["small-photo-1", "small-photo-2", "small-photo-3"]
     ]
     
     var row: Int = 0
@@ -71,6 +87,10 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let destinationVC = segue.destination as? DetailsController {
                 
                 // 3. Pass the data
+                destinationVC.photos = photos[row]
+                
+                destinationVC.items = items[row]
+                
                 destinationVC.info = carsInfo[row]
             }
         }

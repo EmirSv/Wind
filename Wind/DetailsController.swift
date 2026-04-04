@@ -29,7 +29,11 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var viewsButton: UIButton!
     
+    var photos: [String] = []
+    
     var info: [String: String] = [:]
+        
+    var items: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +43,8 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         photo.layer.borderColor = UIColor.lightGray.cgColor
         
         photo.layer.borderWidth = 1
-        
-        photo.image = UIImage(named: "photo-1")
+                
+        photo.image = UIImage(named: photos[0])
         
         makeTitle.text = info["Make"]
         
@@ -90,9 +94,6 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-
-    var items = ["small-photo-1", "small-photo-2", "small-photo-3"]
-    
     
     // MARK: - UICollectionViewDataSource protocol
     
@@ -137,7 +138,7 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         // handle tap events
         print("You selected cell #\(itm)!")
         
-        photo.image = UIImage(named: "photo-\(itm + 1)")
+        photo.image = UIImage(named: photos[itm])
         
         let cell = collectionView.cellForItem(at: indexPath)
             cell?.layer.borderColor = UIColor.blue.cgColor
