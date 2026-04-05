@@ -92,6 +92,13 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 destinationVC.items = items[row]
                 
                 destinationVC.info = carsInfo[row]
+                
+                let defaults = UserDefaults.standard
+                
+                var views = defaults.integer(forKey: "views") + 1
+                
+                defaults.set(views, forKey: "views")
+
             }
         }
     }

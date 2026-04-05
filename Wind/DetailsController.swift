@@ -27,6 +27,8 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var newTitle: UILabel!
     
+    @IBOutlet weak var viewsTitle: UILabel!
+    
     @IBOutlet weak var viewsButton: UIButton!
     
     var photos: [String] = []
@@ -37,9 +39,7 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(info)
-        
+                
         photo.layer.borderColor = UIColor.lightGray.cgColor
         
         photo.layer.borderWidth = 1
@@ -60,10 +60,14 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         
         newTitle.text = info["New"]
         
+        let views = UserDefaults.standard.integer(forKey: "views")
+        
+        viewsTitle.text = "\(views)"
+        
         viewsButton.titleLabel?.textAlignment = .center
         
         viewsButton?.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
-            let buttonText: NSString = "Views\n\n22"
+            let buttonText: NSString = "Multi\nline"
 
         //getting the range to separate the button title strings
         let newlineRange: NSRange = buttonText.range(of: "\n")
