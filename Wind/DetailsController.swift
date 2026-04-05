@@ -40,6 +40,10 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        let defaults = UserDefaults.standard
+        
+        let views = defaults.integer(forKey: "views") + 1
+                
         photo.layer.borderColor = UIColor.lightGray.cgColor
         
         photo.layer.borderWidth = 1
@@ -59,10 +63,10 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
         transmissionTitle.text = info["Transmission"]
         
         newTitle.text = info["New"]
-        
-        let views = UserDefaults.standard.integer(forKey: "views")
-        
+                
         viewsTitle.text = "\(views)"
+        
+        defaults.set(views, forKey: "views")
         
         viewsButton.titleLabel?.textAlignment = .center
         
