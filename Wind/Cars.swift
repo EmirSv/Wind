@@ -9,11 +9,10 @@ import UIKit
 
 class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let ids = [1, 2, 3, 4, 5]
+    
     // Data model: These strings will be the data for the table view cells
     let cars: [String] = ["car-1", "car-2", "car-3", "car-4", "car-5"]
-    
-    // cell reuse id (cells that scroll out of view can be reused)
-    let cellReuseIdentifier = "cell"
     
     let photos = [
         ["photo-1", "photo-2", "photo-3"],
@@ -41,13 +40,11 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var row: Int = 0
     
+    // cell reuse id (cells that scroll out of view can be reused)
+    let cellReuseIdentifier = "cell"
+    
     // don't forget to hook this up from the storyboard
     @IBOutlet var tableView: UITableView!
-    
-    @IBAction func backPressed(_ sender: UIButton) {
-        
-        self.dismiss(animated: false)
-    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 230
@@ -79,6 +76,11 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
         row = indexPath.row
     }
     
+    @IBAction func backPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: false)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 1. Identify which segue is happening
         if segue.identifier == "showDetailsSegue" {
@@ -87,6 +89,8 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let destinationVC = segue.destination as? DetailsController {
                 
                 // 3. Pass the data
+                destinationVC.id = ids[row]
+                
                 destinationVC.photos = photos[row]
                 
                 destinationVC.items = items[row]

@@ -9,6 +9,14 @@ import UIKit
 
 class DetailsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var id = 0
+    
+    var photos: [String] = []
+    
+    var info: [String: String] = [:]
+        
+    var items: [String] = []
+    
     @IBOutlet weak var photo: UIImageView!
     
     @IBOutlet weak var photosCollection: UICollectionView!
@@ -31,18 +39,12 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var viewsButton: UIButton!
     
-    var photos: [String] = []
-    
-    var info: [String: String] = [:]
-        
-    var items: [String] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         let defaults = UserDefaults.standard
         
-        let views = defaults.integer(forKey: "views") + 1
+        let views = defaults.integer(forKey: "\(id)") + 1
                 
         photo.layer.borderColor = UIColor.lightGray.cgColor
         
@@ -66,7 +68,7 @@ class DetailsController: UIViewController, UICollectionViewDataSource, UICollect
                 
         viewsTitle.text = "\(views)"
         
-        defaults.set(views, forKey: "views")
+        defaults.set(views, forKey: "\(id)")
         
         viewsButton.titleLabel?.textAlignment = .center
         
