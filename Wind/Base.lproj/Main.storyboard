@@ -379,22 +379,24 @@
                                     <constraint firstItem="m1F-H3-53v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QR3-iU-HMf" secondAttribute="trailing" constant="8" symbolic="YES" id="w17-qx-DIi"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oZl-NX-kUA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oZl-NX-kUA">
                                 <rect key="frame" x="0.0" y="55" width="440" height="829"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="829" id="P4G-6x-K7U"/>
                                 </constraints>
+                                <color key="separatorColor" systemColor="tableBackgroundColor"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="VVy-5K-D6N" customClass="Car" customModule="Wind" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="440" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="230" id="VVy-5K-D6N" customClass="Car" customModule="Wind" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="440" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VVy-5K-D6N" id="WAO-CE-vjR">
-                                            <rect key="frame" x="0.0" y="0.0" width="440" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="440" height="230"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZe-SU-crg">
-                                                    <rect key="frame" x="20" y="0.0" width="400" height="200"/>
+                                                    <rect key="frame" x="20" y="15" width="400" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="oN6-fX-gIN"/>
                                                     </constraints>
@@ -404,7 +406,8 @@
                                                 <constraint firstItem="qZe-SU-crg" firstAttribute="leading" secondItem="WAO-CE-vjR" secondAttribute="leadingMargin" id="Arc-4v-djF"/>
                                                 <constraint firstItem="qZe-SU-crg" firstAttribute="centerX" secondItem="WAO-CE-vjR" secondAttribute="centerX" id="BBD-GS-Jmn"/>
                                                 <constraint firstItem="qZe-SU-crg" firstAttribute="centerY" secondItem="WAO-CE-vjR" secondAttribute="centerY" id="EuQ-8P-h08"/>
-                                                <constraint firstItem="qZe-SU-crg" firstAttribute="top" secondItem="WAO-CE-vjR" secondAttribute="topMargin" constant="-15" id="p0x-op-qSq"/>
+                                                <constraint firstItem="qZe-SU-crg" firstAttribute="top" secondItem="WAO-CE-vjR" secondAttribute="topMargin" id="p0x-op-qSq"/>
+                                                <constraint firstItem="qZe-SU-crg" firstAttribute="centerX" secondItem="WAO-CE-vjR" secondAttribute="centerX" id="vq3-LT-i0z"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -711,6 +714,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
