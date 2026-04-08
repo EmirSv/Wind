@@ -47,7 +47,7 @@ class Cars: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230
+        return 260
     }
 
     // number of rows in table view
